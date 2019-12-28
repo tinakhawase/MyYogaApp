@@ -11,21 +11,22 @@ import UIKit
 class FirstViewController: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource {
     
     private var asana : Asana
+    //private var breath : Asana
     //
     required init?(coder aDecoder: NSCoder) {
-        self.asana = Asana( asanaa: [])
+        self.asana = Asana(asanaa: [], breath: [], warmups: [], suryanam: [], relax: [], meditate: [])
         super.init(coder: aDecoder)
     }
     
     let items =  ["1", "2", "3", "4", "5", "6"]
-        let imageArray = [UIImage(named: "breathingg"),
-                          UIImage(named: "warmup"),
-                          UIImage(named: "suryanamaskara"),
-                          UIImage(named: "yogasanas"),
-                          UIImage(named: "meditation"),
-                          UIImage(named: "relaxation")]
+    let imageArray = [UIImage(named: "breathingg"),
+                      UIImage(named: "warmup"),
+                      UIImage(named: "suryanamaskara"),
+                      UIImage(named: "yogasanas"),
+                      UIImage(named: "meditation"),
+                      UIImage(named: "relaxation")]
     
-        let nameArray = ["Breathing","Warm up","Surya Namaskara","Asanas","Meditation","Relaxation"]
+    let nameArray = ["Breathing","Warm up","Surya Namaskara","Asanas","Meditation","Relaxation"]
     
     //let imageArray = [UIImage(named: "yogasanas")]
     
@@ -63,9 +64,22 @@ class FirstViewController: UIViewController , UICollectionViewDelegate, UICollec
         print(indexPath.item)
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let desVC = mainStoryboard.instantiateViewController(withIdentifier: "AsanaViewController") as! AsanaViewController
-        //        //               desVC.title = nameArray[indexPath.row]
-        //               desVC. = imageArray[indexPath.row]!
-        desVC.asanas = asana
+        
+        switch indexPath.row {
+        case 0:
+            desVC.onlyAsanas = asana.breathing
+        case 1:
+            desVC.onlyAsanas = asana.warmup
+        case 2:
+            desVC.onlyAsanas = asana.suryanamaskar
+        case 3:
+            desVC.onlyAsanas = asana.asanas
+        case 4:
+            desVC.onlyAsanas = asana.meditation
+        default:
+            desVC.onlyAsanas = asana.relaxation
+        }
+        
         self.navigationController?.pushViewController(desVC, animated: true)
     }
     
@@ -74,6 +88,7 @@ class FirstViewController: UIViewController , UICollectionViewDelegate, UICollec
             let jsonData = try Data(contentsOf: pathName)
             let decoder = JSONDecoder()
             asana = try decoder.decode(Asana.self, from: jsonData)
+        
         } catch {
             print(error)
         }

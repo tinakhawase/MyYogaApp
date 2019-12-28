@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var technique: UITextView!
     
     var asanaDetails : Asana.asana?
+//    var breathDetails : Asana.breathing_exercises?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,13 @@ class DetailViewController: UIViewController {
             DetailImage.image = UIImage( named: String(asana.image_url!))
             technique.text = asana.technique
         }
+        
+//        if let breath = breathDetails {
+//            SanskritName.text = breath.sanskrit_name
+//            EnglishName.text = breath.english_name
+//            DetailImage.image = UIImage( named: String(breath.image_url!))
+//            technique.text = breath.technique
+//        }
     }
     
     

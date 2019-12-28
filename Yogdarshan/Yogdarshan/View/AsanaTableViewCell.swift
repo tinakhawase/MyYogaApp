@@ -13,7 +13,7 @@ class AsanaTableViewCell: UITableViewCell {
      
     
 //    @IBOutlet weak var ImageView: UIImageView!
-    @IBOutlet weak var AsanaLabel: UILabel!
+   // @IBOutlet weak var AsanaLabel: UILabel!
     
    
     

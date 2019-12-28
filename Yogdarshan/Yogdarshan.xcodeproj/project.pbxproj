@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E91A56D6225F7FC600E22323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A56D5225F7FC600E22323 /* AppDelegate.swift */; };
 		E91A56D8225F7FC600E22323 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A56D7225F7FC600E22323 /* FirstViewController.swift */; };
-		E91A56DA225F7FC600E22323 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A56D9225F7FC600E22323 /* SecondViewController.swift */; };
 		E91A56DF225F7FC800E22323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E91A56DE225F7FC800E22323 /* Assets.xcassets */; };
 		E91A56E2225F7FC800E22323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91A56E0225F7FC800E22323 /* LaunchScreen.storyboard */; };
 		E91A56ED225F7FC800E22323 /* YogdarshanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A56EC225F7FC800E22323 /* YogdarshanTests.swift */; };
@@ -44,7 +43,6 @@
 		E91A56D2225F7FC600E22323 /* Yogdarshan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yogdarshan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91A56D5225F7FC600E22323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E91A56D7225F7FC600E22323 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		E91A56D9225F7FC600E22323 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		E91A56DC225F7FC600E22323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E91A56DE225F7FC800E22323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E91A56E1225F7FC800E22323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,19 +109,13 @@
 		E91A56D4225F7FC600E22323 /* Yogdarshan */ = {
 			isa = PBXGroup;
 			children = (
-				E91A57122260E6D600E22323 /* YogaAppAsana.json */,
-				E91A57102260E5A600E22323 /* Asana.swift */,
+				E91D0CCC23B7FE2700BF8F28 /* View */,
 				E91A56D5225F7FC600E22323 /* AppDelegate.swift */,
-				E91A56D7225F7FC600E22323 /* FirstViewController.swift */,
-				E91A5709225F8F5700E22323 /* CollectionViewCell.swift */,
-				E91A56DB225F7FC600E22323 /* Main.storyboard */,
-				E91A5707225F88E100E22323 /* AsanaViewController.swift */,
-				E91A56D9225F7FC600E22323 /* SecondViewController.swift */,
+				E91D0CC923B7FB6B00BF8F28 /* Model */,
+				E91D0CCB23B7FC5600BF8F28 /* Controller */,
 				E91A56DE225F7FC800E22323 /* Assets.xcassets */,
 				E91A56E0225F7FC800E22323 /* LaunchScreen.storyboard */,
 				E91A56E3225F7FC800E22323 /* Info.plist */,
-				E985FA6923A97B3000839895 /* AsanaTableViewCell.swift */,
-				E98D2E2123B53D0D003B29FA /* DetailViewController.swift */,
 			);
 			path = Yogdarshan;
 			sourceTree = "<group>";
@@ -144,6 +136,35 @@
 				E91A56F9225F7FC800E22323 /* Info.plist */,
 			);
 			path = YogdarshanUITests;
+			sourceTree = "<group>";
+		};
+		E91D0CC923B7FB6B00BF8F28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E91A57122260E6D600E22323 /* YogaAppAsana.json */,
+				E91A57102260E5A600E22323 /* Asana.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E91D0CCB23B7FC5600BF8F28 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E91A56D7225F7FC600E22323 /* FirstViewController.swift */,
+				E91A5707225F88E100E22323 /* AsanaViewController.swift */,
+				E98D2E2123B53D0D003B29FA /* DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E91D0CCC23B7FE2700BF8F28 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E985FA6923A97B3000839895 /* AsanaTableViewCell.swift */,
+				E91A5709225F8F5700E22323 /* CollectionViewCell.swift */,
+				E91A56DB225F7FC600E22323 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +300,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E98D2E2223B53D0D003B29FA /* DetailViewController.swift in Sources */,
-				E91A56DA225F7FC600E22323 /* SecondViewController.swift in Sources */,
 				E91A56D6225F7FC600E22323 /* AppDelegate.swift in Sources */,
 				E985FA6A23A97B3000839895 /* AsanaTableViewCell.swift in Sources */,
 				E91A570A225F8F5700E22323 /* CollectionViewCell.swift in Sources */,
