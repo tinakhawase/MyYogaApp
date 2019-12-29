@@ -13,7 +13,9 @@ class AsanaViewController:  UIViewController, UITableViewDataSource, UITableView
     var asanas = Asana(asanaa: [], breath: [], warmups: [], suryanam: [], relax: [], meditate: [])
     var onlyAsanas : [Asana.asana]?
     
-    @IBOutlet weak var tableview: UITableView!
+   @IBOutlet weak var tableview: UITableView!
+   
+    //@IBOutlet weak var title: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

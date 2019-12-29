@@ -79,7 +79,7 @@ class FirstViewController: UIViewController , UICollectionViewDelegate, UICollec
         default:
             desVC.onlyAsanas = asana.relaxation
         }
-        
+        desVC.title = nameArray[indexPath.row]
         self.navigationController?.pushViewController(desVC, animated: true)
     }
     
