@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class DetailViewController: UIViewController {
     
@@ -18,6 +19,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var technique: UITextView!
     
     var asanaDetails : Asana.asana?
+    var speechSynthesizer = AVSpeechSynthesizer()
+    
+    //let synth = AVSpeechSynthesizer()
+  
+    
 //    var breathDetails : Asana.breathing_exercises?
     
     override func viewDidLoad() {
@@ -30,23 +36,48 @@ class DetailViewController: UIViewController {
             technique.text = asana.technique
         }
         
-//        if let breath = breathDetails {
-//            SanskritName.text = breath.sanskrit_name
-//            EnglishName.text = breath.english_name
-//            DetailImage.image = UIImage( named: String(breath.image_url!))
-//            technique.text = breath.technique
-//        }
+        
+       
     }
     
+    func stopAudio (){
+        speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+    }
+    @IBAction func Audio(_ sender: Any) {
+        
+        
+        if (speechSynthesizer.isPaused) {
+                   speechSynthesizer.continueSpeaking();
+               }
+               // The pause functionality
+               else if (speechSynthesizer.isSpeaking) {
+                   speechSynthesizer.pauseSpeaking(at: AVSpeechBoundary.immediate)
+               }
+               // The start functionality
+               else if (!speechSynthesizer.isSpeaking) {
+        
+        if let asana = asanaDetails {
+            var speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string:  asana.technique! )
+            speechUtterance.rate = AVSpeechUtteranceMaximumSpeechRate / 3.0
+            speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            speechSynthesizer.speak(speechUtterance)
+        }
+       
+        speechSynthesizer.pauseSpeaking(at: AVSpeechBoundary.immediate)
+
+
+        }
+    }
+   
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.navigationController?.topViewController != self {
+            print("back button tapped")
+            stopAudio()
+        }
+    }
+
+       
 }
+

@@ -18,6 +18,7 @@
 		E91A570D225FE7FE00E22323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91A56DB225F7FC600E22323 /* Main.storyboard */; };
 		E91A57112260E5A600E22323 /* Asana.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A57102260E5A600E22323 /* Asana.swift */; };
 		E91A57132260E6D600E22323 /* YogaAppAsana.json in Resources */ = {isa = PBXBuildFile; fileRef = E91A57122260E6D600E22323 /* YogaAppAsana.json */; };
+		E91D0CCF23BFF4D600BF8F28 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91D0CCE23BFF4D600BF8F28 /* AVFoundation.framework */; };
 		E985FA6A23A97B3000839895 /* AsanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E985FA6923A97B3000839895 /* AsanaTableViewCell.swift */; };
 		E98D2E2223B53D0D003B29FA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98D2E2123B53D0D003B29FA /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		E91A5709225F8F5700E22323 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		E91A57102260E5A600E22323 /* Asana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asana.swift; sourceTree = "<group>"; };
 		E91A57122260E6D600E22323 /* YogaAppAsana.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = YogaAppAsana.json; sourceTree = "<group>"; };
+		E91D0CCE23BFF4D600BF8F28 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E985FA6923A97B3000839895 /* AsanaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsanaTableViewCell.swift; sourceTree = "<group>"; };
 		E98D2E2123B53D0D003B29FA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91D0CCF23BFF4D600BF8F28 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +96,7 @@
 				E91A56EB225F7FC800E22323 /* YogdarshanTests */,
 				E91A56F6225F7FC800E22323 /* YogdarshanUITests */,
 				E91A56D3225F7FC600E22323 /* Products */,
+				E91D0CCD23BFF4D600BF8F28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,6 +169,14 @@
 				E91A56DB225F7FC600E22323 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E91D0CCD23BFF4D600BF8F28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E91D0CCE23BFF4D600BF8F28 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class FirstViewController: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource {
     
     private var asana : Asana
@@ -39,6 +40,7 @@ class FirstViewController: UIViewController , UICollectionViewDelegate, UICollec
         guard let mainUrl = Bundle.main.url(forResource: "YogaAppAsana", withExtension: "json") else { return }
         
         decodeData(pathName: mainUrl)
+        self.navigationController?.delegate = self
         
     }
     
@@ -81,6 +83,7 @@ class FirstViewController: UIViewController , UICollectionViewDelegate, UICollec
         }
         desVC.title = nameArray[indexPath.row]
         self.navigationController?.pushViewController(desVC, animated: true)
+        
     }
     
     func decodeData(pathName: URL){
@@ -96,3 +99,14 @@ class FirstViewController: UIViewController , UICollectionViewDelegate, UICollec
     
 }
 
+extension FirstViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController,
+                              willShow viewController: UIViewController,
+                              animated: Bool) {
+        if viewController === self {
+            navigationController.setNavigationBarHidden(true, animated: true)
+        } else {
+            navigationController.setNavigationBarHidden(false, animated: true)
+        }
+    }
+}
