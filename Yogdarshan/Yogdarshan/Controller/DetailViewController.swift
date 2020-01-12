@@ -73,7 +73,7 @@ class DetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if self.navigationController?.topViewController != self {
-            print("back button tapped")
+            print("Back button tapped")
             stopAudio()
         }
     }
